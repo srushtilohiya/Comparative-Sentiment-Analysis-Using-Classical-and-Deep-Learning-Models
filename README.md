@@ -12,7 +12,7 @@ This project performs sentiment analysis on movie reviews by comparing classical
 - Logistic Regression
 - Long Short-Term Memory (LSTM)
 
-📊 **Dataset**: [IMDb Movie Reviews Dataset](https://ai.stanford.edu/~amaas/data/sentiment/)  
+📊 **Dataset**: [IMDb Movie Reviews Dataset]([https://ai.stanford.edu/~amaas/data/sentiment/](https://drive.google.com/file/d/1-6f0H0_D100KhzmCWyTUpW4_bmHZfFAj/view?usp=share_link))  
 📁 Format: 50,000 labeled reviews (`positive` / `negative`)
 
 ---
