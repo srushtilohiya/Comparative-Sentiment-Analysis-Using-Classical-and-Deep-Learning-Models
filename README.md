@@ -1,57 +1,65 @@
-# 📊 Comparative Sentiment Analysis Using Classical and Deep Learning Models
+# 🧠 Comparative Sentiment Analysis: Classical ML vs LSTM
 
-This project performs sentiment analysis on movie reviews by comparing classical machine learning models (Naive Bayes, Logistic Regression) and a deep learning model (LSTM). The objective is to evaluate their effectiveness in classifying reviews as positive or negative.
+This project performs sentiment analysis on IMDb movie reviews using both classical machine learning models and a deep learning model (LSTM). The goal is to classify reviews as positive or negative and compare the performance of traditional approaches vs neural networks.
 
 ---
 
-## 🚀 Project Overview
+## 📁 Project Overview
 
-🎯 **Goal**: Predict the sentiment of textual movie reviews using different ML approaches  
-🧪 **Models Compared**:
-- Naive Bayes (Multinomial)
+**Objective**:  
+Predict sentiment polarity of movie reviews using:
+- Naive Bayes
 - Logistic Regression
-- Long Short-Term Memory (LSTM)
+- LSTM (Recurrent Neural Network)
 
-📊 **Dataset**: [IMDb Movie Reviews Dataset]([https://ai.stanford.edu/~amaas/data/sentiment/](https://drive.google.com/file/d/1-6f0H0_D100KhzmCWyTUpW4_bmHZfFAj/view?usp=share_link))  
-📁 Format: 50,000 labeled reviews (`positive` / `negative`)
+**Dataset**:  
+IMDb Dataset (preprocessed CSV)  
+- 50,000 labeled reviews (balanced: 25K positive, 25K negative)
 
 ---
 
 ## 🧰 Tech Stack
 
-| Area                  | Tools/Libraries Used                                |
-|-----------------------|-----------------------------------------------------|
-| Programming Language  | Python                                              |
-| Data Handling         | Pandas, NumPy                                       |
-| Preprocessing         | NLTK, Regex, Scikit-learn, Keras Tokenizer          |
-| Classical ML Models   | Scikit-learn (Naive Bayes, Logistic Regression)     |
-| Deep Learning Model   | TensorFlow (LSTM with Embedding + LSTM + Dense)     |
-| Evaluation            | Precision, Recall, F1-score, Confusion Matrix       |
-| Visualization         | Matplotlib, Seaborn, TensorBoard                    |
+| Task                 | Tools/Libraries Used                          |
+|----------------------|-----------------------------------------------|
+| Programming Language | Python                                        |
+| Data Handling        | Pandas, NumPy                                 |
+| NLP Preprocessing    | NLTK, Regular Expressions                     |
+| ML Models            | Scikit-learn (Naive Bayes, Logistic Regression) |
+| Deep Learning Model  | TensorFlow (Embedding → LSTM → Dense)         |
+| Evaluation           | Precision, Recall, F1-score, Confusion Matrix |
+| Visualization        | Matplotlib, Seaborn, TensorBoard              |
 
 ---
 
 ## 🧹 Preprocessing Pipeline
 
-1. Lowercasing
-2. Removal of punctuation, numbers, and stopwords
-3. Tokenization
-4. Vectorization:
-   - **TF-IDF** for classical models
-   - **Embedding Layer** for LSTM model
+1. Convert text to lowercase  
+2. Remove punctuation and numbers  
+3. Remove stopwords using NLTK  
+4. Tokenization and padding (for deep learning)  
+5. TF-IDF vectorization (for classical models)  
 
 ---
 
-## 🧠 Model Architectures
+## 🔍 Model Architectures
 
-### 🧪 Classical Models
-- **TF-IDF Vectorizer + Naive Bayes**
-- **TF-IDF Vectorizer + Logistic Regression**
+### 🔸 Naive Bayes & Logistic Regression
+- Input vectorized using TF-IDF
+- Trained using scikit-learn
 
-### 🔥 Deep Learning (LSTM)
+### 🔹 LSTM Deep Learning Model
 ```python
 model = Sequential([
-    Embedding(input_dim=5000, output_dim=128, input_length=MAXLEN),
+    Embedding(input_dim=5000, output_dim=128, input_length=500),
     LSTM(64, dropout=0.2, recurrent_dropout=0.2),
     Dense(1, activation='sigmoid')
 ])
+
+
+- Optimizer: Adam
+- Loss: Binary Crossentropy
+- Metrics: Accuracy
+- Tracked training with TensorBoard
+
+
