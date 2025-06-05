@@ -87,17 +87,18 @@ Each model was evaluated using:
 
 ---
 
-## 📂 Project Structure
-.
-├── Sentiment_Analysis.ipynb   # Jupyter notebook with all models
-├── IMDB Dataset.csv           # Dataset used for analysis
-├── README.md                  # Full project overview
+## Project Structure
+
+    ├── Sentiment_Analysis.ipynb   # Jupyter notebook with all models
+    ├── IMDB Dataset.csv           # Dataset used for analysis
+    ├── README.md                  # Full project overview
+
 
 ## How to Run This Project
 
 ```bash
 # 1. Clone the repository
-git clone (https://github.com/srushtilohiya/Comparative-Sentiment-Analysis-Using-Classical-and-Deep-Learning-Models.git)
+git clone https://github.com/srushtilohiya/Comparative-Sentiment-Analysis-Using-Classical-and-Deep-Learning-Models.git
 cd sentiment-analysis
 
 # 2. Install required libraries
@@ -105,8 +106,3 @@ pip install pandas numpy nltk scikit-learn tensorflow matplotlib seaborn
 
 # 3. Run the Jupyter notebook
 jupyter notebook Sentiment_Analysis.ipynb
-
-
-
-
-
