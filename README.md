@@ -49,17 +49,64 @@ IMDb Dataset (preprocessed CSV)
 - Trained using scikit-learn
 
 ### 🔹 LSTM Deep Learning Model
+
 ```python
 model = Sequential([
     Embedding(input_dim=5000, output_dim=128, input_length=500),
     LSTM(64, dropout=0.2, recurrent_dropout=0.2),
     Dense(1, activation='sigmoid')
 ])
+``` 
+
+- **Optimizer**: Adam  
+- **Loss**: Binary Crossentropy  
+- **Metrics**: Accuracy  
+- **Tracked training**: TensorBoard
+
+## 📊 Evaluation Metrics
+
+Each model was evaluated using:
+
+- **Precision**
+- **Recall**
+- **F1 Score**
+- **Confusion Matrix**
+- **TensorBoard** (for LSTM)
+
+---
+
+## 📈 Results
+
+| Model                | Precision | Recall | F1 Score |
+|---------------------|-----------|--------|----------|
+| Naive Bayes         | 0.8511    | 0.8531 | 0.8521   |
+| Logistic Regression | 0.8782    | 0.9049 | 0.8914   |
+| LSTM                | ~0.91     | ~0.89  | ~0.90    |
+
+> 🔎 The LSTM model slightly outperforms classical models in F1 score due to its ability to learn deeper sequential context in reviews.
+
+---
+
+## 📂 Project Structure
+.
+├── Sentiment_Analysis.ipynb   # Jupyter notebook with all models
+├── IMDB Dataset.csv           # Dataset used for analysis
+├── README.md                  # Full project overview
+
+## How to Run This Project
+
+```bash
+# 1. Clone the repository
+git clone (https://github.com/srushtilohiya/Comparative-Sentiment-Analysis-Using-Classical-and-Deep-Learning-Models.git)
+cd sentiment-analysis
+
+# 2. Install required libraries
+pip install pandas numpy nltk scikit-learn tensorflow matplotlib seaborn
+
+# 3. Run the Jupyter notebook
+jupyter notebook Sentiment_Analysis.ipynb
 
 
-- Optimizer: Adam
-- Loss: Binary Crossentropy
-- Metrics: Accuracy
-- Tracked training with TensorBoard
+
 
 
